@@ -6,7 +6,7 @@
       "value": "westeurope"
     },
     "networkInterfaceName": {
-      "value": "cpa-d-vm-001825"
+      "value": "cpa-d-vm-001102"
     },
     "networkSecurityGroupName": {
       "value": "cpa-d-vm-001-nsg"
