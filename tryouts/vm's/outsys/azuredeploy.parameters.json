@@ -1,0 +1,178 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "location": {
+      "value": "westeurope"
+    },
+    "networkInterfaceName": {
+      "value": "os-d-vm-001529"
+    },
+    "networkSecurityGroupName": {
+      "value": "os-d-vm-001-nsg"
+    },
+    "networkSecurityGroupRules": {
+      "value": [
+        {
+          "name": "HTTP",
+          "properties": {
+            "priority": 300,
+            "protocol": "TCP",
+            "access": "Allow",
+            "direction": "Inbound",
+            "sourceAddressPrefix": "*",
+            "sourcePortRange": "*",
+            "destinationAddressPrefix": "*",
+            "destinationPortRange": "80"
+          }
+        },
+        {
+          "name": "HTTPS",
+          "properties": {
+            "priority": 320,
+            "protocol": "TCP",
+            "access": "Allow",
+            "direction": "Inbound",
+            "sourceAddressPrefix": "*",
+            "sourcePortRange": "*",
+            "destinationAddressPrefix": "*",
+            "destinationPortRange": "443"
+          }
+        },
+        {
+          "name": "RDP",
+          "properties": {
+            "priority": 340,
+            "protocol": "TCP",
+            "access": "Allow",
+            "direction": "Inbound",
+            "sourceAddressPrefix": "*",
+            "sourcePortRange": "*",
+            "destinationAddressPrefix": "*",
+            "destinationPortRange": "3389"
+          }
+        }
+      ]
+    },
+    "subnetName": {
+      "value": "subnet_d_fe"
+    },
+    "virtualNetworkName": {
+      "value": "os-d-vnet-001"
+    },
+    "addressPrefixes": {
+      "value": [
+        "10.1.0.0/16"
+      ]
+    },
+    "subnets": {
+      "value": [
+        {
+          "name": "subnet_d_fe",
+          "properties": {
+            "addressPrefix": "10.1.2.0/24"
+          }
+        },
+        {
+          "name": "AzureFirewallSubnet",
+          "properties": {
+            "addressPrefix": "10.1.1.0/24"
+          }
+        }
+      ]
+    },
+    "publicIpAddressName": {
+      "value": "os-d-vm-001-ip"
+    },
+    "publicIpAddressType": {
+      "value": "Dynamic"
+    },
+    "publicIpAddressSku": {
+      "value": "Basic"
+    },
+    "virtualMachineName": {
+      "value": "os-d-vm-001"
+    },
+    "virtualMachineRG": {
+      "value": "os-d-rg-001"
+    },
+    "osDiskType": {
+      "value": "StandardSSD_LRS"
+    },
+    "dataDisks": {
+      "value": [
+        {
+          "lun": 0,
+          "createOption": "attach",
+          "caching": "None",
+          "writeAcceleratorEnabled": false,
+          "id": null,
+          "name": "os-d-vm-001_datadisk_1",
+          "storageAccountType": null,
+          "diskSizeGB": null,
+          "diskEncryptionSet": {
+            "id": null
+          }
+        },
+        {
+          "lun": 1,
+          "createOption": "attach",
+          "caching": "None",
+          "writeAcceleratorEnabled": false,
+          "id": null,
+          "name": "os-d-vm-001_datadisk_2",
+          "storageAccountType": null,
+          "diskSizeGB": null,
+          "diskEncryptionSet": {
+            "id": null
+          }
+        }
+      ]
+    },
+    "dataDiskResources": {
+      "value": [
+        {
+          "name": "os-d-vm-001_datadisk_1",
+          "sku": "StandardSSD_LRS",
+          "properties": {
+            "diskSizeGB": 128,
+            "creationData": {
+              "createOption": "empty"
+            }
+          }
+        },
+        {
+          "name": "os-d-vm-001_datadisk_2",
+          "sku": "StandardSSD_LRS",
+          "properties": {
+            "diskSizeGB": 64,
+            "creationData": {
+              "createOption": "empty"
+            }
+          }
+        }
+      ]
+    },
+    "virtualMachineSize": {
+      "value": "Standard_B2s"
+    },
+    "adminUsername": {
+      "value": "vm-admin"
+    },
+    "adminPassword": {
+      "value": null
+    },
+    "diagnosticsStorageAccountName": {
+      "value": "osdrg001diag"
+    },
+    "diagnosticsStorageAccountId": {
+      "value": "Microsoft.Storage/storageAccounts/osdrg001diag"
+    },
+    "diagnosticsStorageAccountType": {
+      "value": "Standard_LRS"
+    },
+    "diagnosticsStorageAccountKind": {
+      "value": "Storage"
+    }
+  }
+}

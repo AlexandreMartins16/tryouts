@@ -1,0 +1,151 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "location": {
+      "value": "westeurope"
+    },
+    "networkInterfaceName": {
+      "value": "cpa-d-vm-001825"
+    },
+    "networkSecurityGroupName": {
+      "value": "cpa-d-vm-001-nsg"
+    },
+    "networkSecurityGroupRules": {
+      "value": [
+        {
+          "name": "RDP",
+          "properties": {
+            "priority": 300,
+            "protocol": "TCP",
+            "access": "Allow",
+            "direction": "Inbound",
+            "sourceAddressPrefix": "*",
+            "sourcePortRange": "*",
+            "destinationAddressPrefix": "*",
+            "destinationPortRange": "3389"
+          }
+        },
+        {
+          "name": "HTTPS",
+          "properties": {
+            "priority": 320,
+            "protocol": "TCP",
+            "access": "Allow",
+            "direction": "Inbound",
+            "sourceAddressPrefix": "*",
+            "sourcePortRange": "*",
+            "destinationAddressPrefix": "*",
+            "destinationPortRange": "443"
+          }
+        },
+        {
+          "name": "HTTP",
+          "properties": {
+            "priority": 340,
+            "protocol": "TCP",
+            "access": "Allow",
+            "direction": "Inbound",
+            "sourceAddressPrefix": "*",
+            "sourcePortRange": "*",
+            "destinationAddressPrefix": "*",
+            "destinationPortRange": "80"
+          }
+        }
+      ]
+    },
+    "subnetName": {
+      "value": "subnet_d_fe"
+    },
+    "virtualNetworkId": {
+      "value": "/subscriptions/a871fbf0-88e8-4dcd-8ded-a46f9075e42e/resourceGroups/os-d-rg-001/providers/Microsoft.Network/virtualNetworks/os-d-vnet-001"
+    },
+    "publicIpAddressName": {
+      "value": "cpa-d-vm-001-ip"
+    },
+    "publicIpAddressType": {
+      "value": "Dynamic"
+    },
+    "publicIpAddressSku": {
+      "value": "Basic"
+    },
+    "virtualMachineName": {
+      "value": "cpa-d-vm-001"
+    },
+    "virtualMachineRG": {
+      "value": "os-d-rg-001"
+    },
+    "osDiskType": {
+      "value": "StandardSSD_LRS"
+    },
+    "dataDisks": {
+      "value": [
+        {
+          "lun": 0,
+          "createOption": "attach",
+          "caching": "None",
+          "writeAcceleratorEnabled": false,
+          "id": null,
+          "name": "cpa-d-vm-001_datadisk_0",
+          "storageAccountType": null,
+          "diskSizeGB": null,
+          "diskEncryptionSet": {
+            "id": null
+          }
+        },
+        {
+          "lun": 1,
+          "createOption": "attach",
+          "caching": "None",
+          "writeAcceleratorEnabled": false,
+          "id": null,
+          "name": "cpa-d-vm-001_datadisk_1",
+          "storageAccountType": null,
+          "diskSizeGB": null,
+          "diskEncryptionSet": {
+            "id": null
+          }
+        }
+      ]
+    },
+    "dataDiskResources": {
+      "value": [
+        {
+          "name": "cpa-d-vm-001_datadisk_0",
+          "sku": "StandardSSD_LRS",
+          "properties": {
+            "diskSizeGB": 128,
+            "creationData": {
+              "createOption": "empty"
+            }
+          }
+        },
+        {
+          "name": "cpa-d-vm-001_datadisk_1",
+          "sku": "StandardSSD_LRS",
+          "properties": {
+            "diskSizeGB": 64,
+            "creationData": {
+              "createOption": "empty"
+            }
+          }
+        }
+      ]
+    },
+    "virtualMachineSize": {
+      "value": "Standard_B2s"
+    },
+    "adminUsername": {
+      "value": "vm-admin"
+    },
+    "adminPassword": {
+      "value": null
+    },
+    "diagnosticsStorageAccountName": {
+      "value": "osdrg001diag"
+    },
+    "diagnosticsStorageAccountId": {
+      "value": "/subscriptions/a871fbf0-88e8-4dcd-8ded-a46f9075e42e/resourceGroups/os-d-rg-001/providers/Microsoft.Storage/storageAccounts/osdrg001diag"
+    }
+  }
+}
