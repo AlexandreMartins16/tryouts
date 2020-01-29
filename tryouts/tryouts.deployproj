@@ -25,6 +25,10 @@
   <ItemGroup>
     <Content Include="azuredeploy.parameters.json" />
     <Content Include="azuredeploy.json" />
+    <Content Include="bd's\cpa\azuredeploy.json" />
+    <Content Include="bd's\cpa\azuredeploy.parameters.json" />
+    <Content Include="bd's\logs\azuredeploy.json" />
+    <Content Include="bd's\logs\azuredeploy.parameters.json" />
     <Content Include="bd's\outsys with server\azuredeploy.json" />
     <Content Include="bd's\outsys with server\azuredeploy.parameters.json" />
     <Content Include="bd's\sessions\azuredeploy.json" />
