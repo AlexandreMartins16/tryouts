@@ -27,6 +27,8 @@
     <Content Include="azuredeploy.json" />
     <Content Include="bd's\outsys with server\azuredeploy.json" />
     <Content Include="bd's\outsys with server\azuredeploy.parameters.json" />
+    <Content Include="bd's\sessions\azuredeploy.json" />
+    <Content Include="bd's\sessions\azuredeploy.parameters.json" />
     <Content Include="vm's\outsys\azuredeploy.json" />
     <Content Include="vm's\outsys\azuredeploy.parameters.json" />
     <Content Include="vm's\pensions\azuredeploy.json" />
